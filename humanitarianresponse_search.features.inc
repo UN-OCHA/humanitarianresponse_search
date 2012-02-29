@@ -5,6 +5,16 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function humanitarianresponse_search_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "facetapi" && $api == "facetapi_defaults") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_default_search_api_index().
  */
 function humanitarianresponse_search_default_search_api_index() {
@@ -27,15 +37,15 @@ function humanitarianresponse_search_default_search_api_index() {
         "created" : { "type" : "date" },
         "changed" : { "type" : "date" },
         "author" : { "type" : "integer", "entity_type" : "user" },
-        "field_document_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_clusters" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_themes" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_coordination_hubs" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_display_properties" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_document_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_emergency" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_fundings" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_locations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_emergency" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_display_properties" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_themes" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_map_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_event_category" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_event_contact_email" : { "type" : "text" },
@@ -45,11 +55,11 @@ function humanitarianresponse_search_default_search_api_index() {
         "field_contact_job_title" : { "type" : "text" },
         "field_contact_lastname" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
+        "search_api_url" : { "type" : "uri" },
+        "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "body:value" : { "type" : "text" },
         "body:summary" : { "type" : "text" },
-        "field_document_files:field_document_files_file:file" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "file" },
-        "search_api_url" : { "type" : "uri" },
-        "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" }
+        "field_document_files:field_document_files_file:file" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "file" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
@@ -58,7 +68,11 @@ function humanitarianresponse_search_default_search_api_index() {
           "settings" : { "default" : "1", "bundles" : [] }
         },
         "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
+        "search_api_alter_add_hierarchy" : {
+          "status" : 0,
+          "weight" : "0",
+          "settings" : { "fields" : { "field_clusters:parent" : "field_clusters:parent" } }
+        },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } }
