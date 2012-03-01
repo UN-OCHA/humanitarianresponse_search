@@ -162,6 +162,30 @@ function humanitarianresponse_search_default_search_api_index() {
 }
 
 /**
+ * Implements hook_default_search_api_page().
+ */
+function humanitarianresponse_search_default_search_api_page() {
+  $items = array();
+  $items['search_page'] = entity_import('search_api_page', '{
+    "index_id" : "node_index",
+    "path" : "search",
+    "name" : "Search",
+    "machine_name" : "search_page",
+    "description" : "",
+    "options" : {
+      "mode" : "terms",
+      "fields" : [],
+      "per_page" : "10",
+      "get_per_page" : 1,
+      "view_mode" : "search_api_page_result"
+    },
+    "enabled" : "1",
+    "rdf_mapping" : []
+  }');
+  return $items;
+}
+
+/**
  * Implements hook_default_search_api_server().
  */
 function humanitarianresponse_search_default_search_api_server() {
