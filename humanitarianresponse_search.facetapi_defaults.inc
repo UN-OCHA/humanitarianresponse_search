@@ -10,7 +10,7 @@
 function humanitarianresponse_search_facetapi_default_facet_settings() {
   $export = array();
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_clusters';
@@ -44,7 +44,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:field_clusters'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_coordination_hubs';
@@ -78,7 +78,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:field_coordination_hubs'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_display_properties';
@@ -112,7 +112,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:field_display_properties'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_document_type';
@@ -154,7 +154,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:field_document_type'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_emergency';
@@ -188,7 +188,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:field_emergency'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_event_category';
@@ -222,7 +222,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:field_event_category'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_fundings';
@@ -256,7 +256,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:field_fundings'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_locations';
@@ -290,7 +290,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:field_locations'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_map_type';
@@ -324,7 +324,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:field_map_type'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_organizations';
@@ -358,7 +358,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:field_organizations'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_themes';
@@ -392,7 +392,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:field_themes'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:language';
@@ -426,7 +426,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   );
   $export['search_api@node_index:block:language'] = $facet;
 
-  $facet = new stdClass;
+  $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:type';
