@@ -21,6 +21,16 @@ function humanitarianresponse_search_user_default_permissions() {
     'module' => 'search_api_page',
   );
 
+  // Exported permission: administer custom search
+  $permissions['administer custom search'] = array(
+    'name' => 'administer custom search',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'manager',
+    ),
+    'module' => 'custom_search',
+  );
+
   // Exported permission: search content
   $permissions['search content'] = array(
     'name' => 'search content',
