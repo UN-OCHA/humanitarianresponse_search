@@ -200,9 +200,9 @@ function humanitarianresponse_search_default_search_api_server() {
     "description" : "",
     "class" : "search_api_solr_service",
     "options" : {
-      "host" : "www.viguierjust.com",
-      "port" : "8080",
-      "path" : "\\/solr",
+      "host" : "ocha-bsqlstag1",
+      "port" : "8983",
+      "path" : "\\/solr/core_name",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,
