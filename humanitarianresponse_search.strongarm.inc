@@ -14,7 +14,7 @@ function humanitarianresponse_search_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_image_path';
-  $strongarm->value = 'profiles/humanitarianresponse/themes/humanitarianresponse/images/search.png';
+  $strongarm->value = 'sites/all/themes/humanitarianresponse/images/search.png';
   $export['custom_search_image_path'] = $strongarm;
 
   $strongarm = new stdClass();
