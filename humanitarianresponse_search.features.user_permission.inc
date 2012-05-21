@@ -10,7 +10,7 @@
 function humanitarianresponse_search_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: access search_api_page
+  // Exported permission: access search_api_page.
   $permissions['access search_api_page'] = array(
     'name' => 'access search_api_page',
     'roles' => array(
@@ -21,7 +21,7 @@ function humanitarianresponse_search_user_default_permissions() {
     'module' => 'search_api_page',
   );
 
-  // Exported permission: administer custom search
+  // Exported permission: administer custom search.
   $permissions['administer custom search'] = array(
     'name' => 'administer custom search',
     'roles' => array(
@@ -31,7 +31,7 @@ function humanitarianresponse_search_user_default_permissions() {
     'module' => 'custom_search',
   );
 
-  // Exported permission: search content
+  // Exported permission: search content.
   $permissions['search content'] = array(
     'name' => 'search content',
     'roles' => array(
@@ -42,7 +42,7 @@ function humanitarianresponse_search_user_default_permissions() {
     'module' => 'search',
   );
 
-  // Exported permission: use custom search
+  // Exported permission: use custom search.
   $permissions['use custom search'] = array(
     'name' => 'use custom search',
     'roles' => array(
