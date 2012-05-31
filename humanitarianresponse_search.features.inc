@@ -203,7 +203,7 @@ function humanitarianresponse_search_default_search_api_server() {
     "options" : {
       "host" : "ocha-bsqlstag1",
       "port" : "8983",
-      "path" : "\\u002Fsolr\\u002Fcore_name",
+      "path" : "\\u002Fsolr\\u002Fdev1",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,

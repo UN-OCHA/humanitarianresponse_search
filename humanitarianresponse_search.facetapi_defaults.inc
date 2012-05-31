@@ -13,6 +13,56 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
+  $facet->name = 'search_api@node_index::field_clusters';
+  $facet->searcher = 'search_api@node_index';
+  $facet->realm = '';
+  $facet->facet = 'field_clusters';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '0',
+    'query_type' => 'term',
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'pretty_paths_alias' => 'cluster',
+  );
+  $export['search_api@node_index::field_clusters'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@node_index::field_display_properties';
+  $facet->searcher = 'search_api@node_index';
+  $facet->realm = '';
+  $facet->facet = 'field_display_properties';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '0',
+    'query_type' => 'term',
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'pretty_paths_alias' => 'display-properties',
+  );
+  $export['search_api@node_index::field_display_properties'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
   $facet->name = 'search_api@node_index::field_document_type';
   $facet->searcher = 'search_api@node_index';
   $facet->realm = '';
@@ -34,6 +84,56 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'pretty_paths_alias' => 'document-type',
   );
   $export['search_api@node_index::field_document_type'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@node_index::field_emergency';
+  $facet->searcher = 'search_api@node_index';
+  $facet->realm = '';
+  $facet->facet = 'field_emergency';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '0',
+    'query_type' => 'term',
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'pretty_paths_alias' => 'emergency',
+  );
+  $export['search_api@node_index::field_emergency'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@node_index::field_event_category';
+  $facet->searcher = 'search_api@node_index';
+  $facet->realm = '';
+  $facet->facet = 'field_event_category';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '0',
+    'query_type' => 'term',
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'pretty_paths_alias' => 'event-category',
+  );
+  $export['search_api@node_index::field_event_category'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -63,6 +163,106 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
+  $facet->name = 'search_api@node_index::field_locations';
+  $facet->searcher = 'search_api@node_index';
+  $facet->realm = '';
+  $facet->facet = 'field_locations';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '0',
+    'query_type' => 'term',
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'pretty_paths_alias' => 'location',
+  );
+  $export['search_api@node_index::field_locations'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@node_index::field_map_type';
+  $facet->searcher = 'search_api@node_index';
+  $facet->realm = '';
+  $facet->facet = 'field_map_type';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '0',
+    'query_type' => 'term',
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'pretty_paths_alias' => 'map-type',
+  );
+  $export['search_api@node_index::field_map_type'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@node_index::field_organizations';
+  $facet->searcher = 'search_api@node_index';
+  $facet->realm = '';
+  $facet->facet = 'field_organizations';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '0',
+    'query_type' => 'term',
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'pretty_paths_alias' => 'organization',
+  );
+  $export['search_api@node_index::field_organizations'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@node_index::field_themes';
+  $facet->searcher = 'search_api@node_index';
+  $facet->realm = '';
+  $facet->facet = 'field_themes';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '0',
+    'query_type' => 'term',
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'pretty_paths_alias' => 'theme',
+  );
+  $export['search_api@node_index::field_themes'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
   $facet->name = 'search_api@node_index:block:field_clusters';
   $facet->searcher = 'search_api@node_index';
   $facet->realm = 'block';
@@ -76,21 +276,29 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['search_api@node_index:block:field_clusters'] = $facet;
 
@@ -144,21 +352,29 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['search_api@node_index:block:field_display_properties'] = $facet;
 
@@ -220,21 +436,29 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['search_api@node_index:block:field_emergency'] = $facet;
 
@@ -254,21 +478,29 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['search_api@node_index:block:field_event_category'] = $facet;
 
@@ -330,21 +562,29 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['search_api@node_index:block:field_locations'] = $facet;
 
@@ -364,21 +604,29 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['search_api@node_index:block:field_map_type'] = $facet;
 
@@ -398,21 +646,29 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['search_api@node_index:block:field_organizations'] = $facet;
 
@@ -432,21 +688,29 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['search_api@node_index:block:field_themes'] = $facet;
 
