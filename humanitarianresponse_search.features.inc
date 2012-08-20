@@ -180,6 +180,7 @@ function humanitarianresponse_search_default_search_api_page() {
       "mode" : "terms",
       "fields" : [  ],
       "per_page" : "10",
+      "rss_link" : 1,
       "get_per_page" : 1,
       "view_mode" : "teaser"
     },
