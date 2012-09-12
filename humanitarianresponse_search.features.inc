@@ -19,6 +19,13 @@ function humanitarianresponse_search_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function humanitarianresponse_search_views_api() {
+  return array("version" => "3.0");
+}
+
+/**
  * Implements hook_default_search_api_index().
  */
 function humanitarianresponse_search_default_search_api_index() {
@@ -69,16 +76,16 @@ function humanitarianresponse_search_default_search_api_index() {
         "search_api_alter_bundle_filter" : {
           "status" : 0,
           "weight" : "-10",
-          "settings" : { "default" : "1", "bundles" : [  ] }
+          "settings" : { "default" : "1", "bundles" : [] }
         },
-        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [  ] },
+        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_add_hierarchy" : {
           "status" : 1,
           "weight" : "0",
           "settings" : { "fields" : { "field_document_type:parent" : "field_document_type:parent" } }
         },
-        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [  ] },
-        "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [  ] },
+        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } }
       },
       "processors" : {
@@ -115,7 +122,7 @@ function humanitarianresponse_search_default_search_api_index() {
             },
             "title" : 0,
             "alt" : 1,
-            "tags" : "h1 = 5\\u000D\\u000Ah2 = 3\\u000D\\u000Ah3 = 2\\u000D\\u000Astrong = 2\\u000D\\u000Ab = 2\\u000D\\u000Aem = 1.5\\u000D\\u000Au = 1.5"
+            "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
           }
         },
         "search_api_tokenizer" : {
@@ -133,7 +140,7 @@ function humanitarianresponse_search_default_search_api_index() {
               "body:value" : true,
               "body:summary" : true
             },
-            "spaces" : "[^\\u005Cp{L}\\u005Cp{N}^\\u0027]",
+            "spaces" : "[^\\\\p{L}\\\\p{N}^\\u0027]",
             "ignorable" : "[-]"
           }
         },
@@ -153,39 +160,14 @@ function humanitarianresponse_search_default_search_api_index() {
               "body:summary" : true
             },
             "file" : "",
-            "stopwords" : "but\\u000D\\u000Adid\\u000D\\u000Athe this that those\\u000D\\u000Aetc"
+            "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
           }
         }
       }
     },
     "enabled" : "1",
     "read_only" : "0",
-    "rdf_mapping" : [  ]
-  }');
-  return $items;
-}
-
-/**
- * Implements hook_default_search_api_page().
- */
-function humanitarianresponse_search_default_search_api_page() {
-  $items = array();
-  $items['search_page'] = entity_import('search_api_page', '{
-    "index_id" : "node_index",
-    "path" : "search",
-    "name" : "Search",
-    "machine_name" : "search_page",
-    "description" : "",
-    "options" : {
-      "mode" : "terms",
-      "fields" : [  ],
-      "per_page" : "10",
-      "rss_link" : 1,
-      "get_per_page" : 1,
-      "view_mode" : "teaser"
-    },
-    "enabled" : "1",
-    "rdf_mapping" : [  ]
+    "rdf_mapping" : []
   }');
   return $items;
 }
@@ -201,9 +183,9 @@ function humanitarianresponse_search_default_search_api_server() {
     "description" : "",
     "class" : "search_api_solr_service",
     "options" : {
-      "host" : "ocha-bsqlstag1",
+      "host" : "74.121.198.179",
       "port" : "8983",
-      "path" : "\\u002Fsolr\\u002Fdev1",
+      "path" : "\\/solr\\/",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,
@@ -211,7 +193,7 @@ function humanitarianresponse_search_default_search_api_server() {
       "highlight_data" : 0
     },
     "enabled" : "1",
-    "rdf_mapping" : [  ]
+    "rdf_mapping" : []
   }');
   return $items;
 }
