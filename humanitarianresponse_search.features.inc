@@ -78,19 +78,29 @@ function humanitarianresponse_search_default_search_api_index() {
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "-10",
-          "settings" : { "default" : "1", "bundles" : [] }
+          "settings" : {
+            "default" : "1",
+            "bundles" : {
+              "assessment" : "assessment",
+              "media_gallery" : "media_gallery",
+              "humanitarian_profile" : "humanitarian_profile",
+              "link" : "link",
+              "page" : "page"
+            }
+          }
         },
-        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [  ] },
+        "search_api_alter_node_status" : { "status" : 0, "weight" : "0", "settings" : [  ] },
         "search_api_alter_add_hierarchy" : {
           "status" : 1,
           "weight" : "0",
           "settings" : { "fields" : { "field_document_type:parent" : "field_document_type:parent" } }
         },
-        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } }
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
+        "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [  ] },
+        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [  ] }
       },
       "processors" : {
         "search_api_case_ignore" : {
@@ -98,12 +108,12 @@ function humanitarianresponse_search_default_search_api_index() {
           "weight" : "0",
           "settings" : { "fields" : {
               "title" : true,
-              "field_event_contact_email" : true,
-              "field_event_contact_person" : true,
-              "field_link_description" : true,
               "field_contact_email" : true,
               "field_contact_job_title" : true,
               "field_contact_lastname" : true,
+              "field_event_contact_email" : true,
+              "field_event_contact_person" : true,
+              "field_link_description" : true,
               "body:value" : true,
               "body:summary" : true
             }
@@ -115,18 +125,18 @@ function humanitarianresponse_search_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "field_event_contact_email" : true,
-              "field_event_contact_person" : true,
-              "field_link_description" : true,
               "field_contact_email" : true,
               "field_contact_job_title" : true,
               "field_contact_lastname" : true,
+              "field_event_contact_email" : true,
+              "field_event_contact_person" : true,
+              "field_link_description" : true,
               "body:value" : true,
               "body:summary" : true
             },
             "title" : 0,
             "alt" : 1,
-            "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
+            "tags" : "h1 = 5\\u000D\\u000Ah2 = 3\\u000D\\u000Ah3 = 2\\u000D\\u000Astrong = 2\\u000D\\u000Ab = 2\\u000D\\u000Aem = 1.5\\u000D\\u000Au = 1.5"
           }
         },
         "search_api_tokenizer" : {
@@ -135,16 +145,16 @@ function humanitarianresponse_search_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "field_event_contact_email" : true,
-              "field_event_contact_person" : true,
-              "field_link_description" : true,
               "field_contact_email" : true,
               "field_contact_job_title" : true,
               "field_contact_lastname" : true,
+              "field_event_contact_email" : true,
+              "field_event_contact_person" : true,
+              "field_link_description" : true,
               "body:value" : true,
               "body:summary" : true
             },
-            "spaces" : "[^\\\\p{L}\\\\p{N}^\\u0027]",
+            "spaces" : "[^\\u005Cp{L}\\u005Cp{N}^\\u0027]",
             "ignorable" : "[-]"
           }
         },
@@ -154,24 +164,24 @@ function humanitarianresponse_search_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "field_event_contact_email" : true,
-              "field_event_contact_person" : true,
-              "field_link_description" : true,
               "field_contact_email" : true,
               "field_contact_job_title" : true,
               "field_contact_lastname" : true,
+              "field_event_contact_email" : true,
+              "field_event_contact_person" : true,
+              "field_link_description" : true,
               "body:value" : true,
               "body:summary" : true
             },
             "file" : "",
-            "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
+            "stopwords" : "but\\u000D\\u000Adid\\u000D\\u000Athe this that those\\u000D\\u000Aetc"
           }
         }
       }
     },
     "enabled" : "1",
     "read_only" : "0",
-    "rdf_mapping" : []
+    "rdf_mapping" : [  ]
   }');
   return $items;
 }
@@ -189,7 +199,7 @@ function humanitarianresponse_search_default_search_api_server() {
     "options" : {
       "host" : "74.121.198.179",
       "port" : "8983",
-      "path" : "\\/solr\\/",
+      "path" : "\\u002Fsolr\\u002F",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,
@@ -197,7 +207,7 @@ function humanitarianresponse_search_default_search_api_server() {
       "highlight_data" : 0
     },
     "enabled" : "1",
-    "rdf_mapping" : []
+    "rdf_mapping" : [  ]
   }');
   return $items;
 }
