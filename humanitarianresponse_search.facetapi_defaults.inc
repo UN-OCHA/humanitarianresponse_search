@@ -24,12 +24,13 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
     'flatten' => '0',
     'query_type' => 'term',
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'cluster',
   );
@@ -49,12 +50,13 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
     'flatten' => '0',
     'query_type' => 'term',
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'display-properties',
   );
@@ -74,12 +76,13 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
     'flatten' => '0',
     'query_type' => 'term',
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'document-type',
   );
@@ -124,12 +127,13 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
     'flatten' => '0',
     'query_type' => 'term',
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'event-category',
   );
@@ -149,12 +153,13 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
     'flatten' => '0',
     'query_type' => 'term',
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'funding',
   );
@@ -174,12 +179,13 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
     'flatten' => '0',
     'query_type' => 'term',
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'location',
   );
@@ -199,12 +205,13 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
     'flatten' => '0',
     'query_type' => 'term',
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'map-type',
   );
@@ -224,12 +231,13 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
     'flatten' => '0',
     'query_type' => 'term',
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'organization',
   );
@@ -249,12 +257,13 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
     'flatten' => '0',
     'query_type' => 'term',
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'theme',
   );
@@ -270,7 +279,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -299,6 +308,9 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'format' => 'filtered_html',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'keep_open' => 0,
+    'expand' => 1,
+    'collapsible_children' => 0,
   );
   $export['search_api@node_index:block:field_clusters'] = $facet;
 
@@ -312,27 +324,38 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'keep_open' => 0,
+    'expand' => 0,
+    'collapsible_children' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['search_api@node_index:block:field_coordination_hubs'] = $facet;
 
@@ -346,7 +369,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -375,6 +398,9 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'format' => 'filtered_html',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'keep_open' => 0,
+    'expand' => 0,
+    'collapsible_children' => 0,
   );
   $export['search_api@node_index:block:field_display_properties'] = $facet;
 
@@ -388,7 +414,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -417,6 +443,9 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'format' => 'filtered_html',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'keep_open' => 0,
+    'expand' => 0,
+    'collapsible_children' => 0,
   );
   $export['search_api@node_index:block:field_document_type'] = $facet;
 
@@ -472,7 +501,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -501,6 +530,9 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'format' => 'filtered_html',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'keep_open' => 0,
+    'expand' => 0,
+    'collapsible_children' => 0,
   );
   $export['search_api@node_index:block:field_event_category'] = $facet;
 
@@ -514,7 +546,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -543,6 +575,9 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'format' => 'filtered_html',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'keep_open' => 0,
+    'expand' => 0,
+    'collapsible_children' => 0,
   );
   $export['search_api@node_index:block:field_fundings'] = $facet;
 
@@ -556,7 +591,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -585,6 +620,9 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'format' => 'filtered_html',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'keep_open' => 0,
+    'expand' => 0,
+    'collapsible_children' => 0,
   );
   $export['search_api@node_index:block:field_locations'] = $facet;
 
@@ -598,7 +636,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -627,6 +665,9 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'format' => 'filtered_html',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'keep_open' => 0,
+    'expand' => 0,
+    'collapsible_children' => 0,
   );
   $export['search_api@node_index:block:field_map_type'] = $facet;
 
@@ -640,7 +681,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -669,6 +710,9 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'format' => 'filtered_html',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'keep_open' => 0,
+    'expand' => 0,
+    'collapsible_children' => 0,
   );
   $export['search_api@node_index:block:field_organizations'] = $facet;
 
@@ -682,7 +726,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -711,6 +755,9 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'format' => 'filtered_html',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'keep_open' => 0,
+    'expand' => 0,
+    'collapsible_children' => 0,
   );
   $export['search_api@node_index:block:field_themes'] = $facet;
 
@@ -724,27 +771,38 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'keep_open' => 0,
+    'expand' => 0,
+    'collapsible_children' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+    'submit_realm' => 'Save and go back to realm settings',
   );
   $export['search_api@node_index:block:language'] = $facet;
 
@@ -758,7 +816,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'collapsible',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -787,6 +845,9 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
       'format' => 'filtered_html',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'keep_open' => 0,
+    'expand' => 1,
+    'collapsible_children' => 0,
   );
   $export['search_api@node_index:block:type'] = $facet;
 

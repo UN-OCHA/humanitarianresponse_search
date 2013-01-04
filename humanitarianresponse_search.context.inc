@@ -26,6 +26,12 @@ function humanitarianresponse_search_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'current_search-humanitarianresponse' => array(
+          'module' => 'current_search',
+          'delta' => 'humanitarianresponse',
+          'region' => 'content',
+          'weight' => '-5',
+        ),
         'facetapi-Shb0Q1vWgCArrHrjHszTyhl2jaEhIjzW' => array(
           'module' => 'facetapi',
           'delta' => 'Shb0Q1vWgCArrHrjHszTyhl2jaEhIjzW',
