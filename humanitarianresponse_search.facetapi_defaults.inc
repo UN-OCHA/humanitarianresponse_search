@@ -187,7 +187,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'query_type' => 'term',
     'default_true' => TRUE,
     'facet_search_ids' => array(),
-    'pretty_paths_alias' => 'location',
+    'pretty_paths_alias' => 'locations',
   );
   $export['search_api@node_index::field_locations'] = $facet;
 
