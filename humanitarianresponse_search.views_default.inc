@@ -52,7 +52,7 @@ function humanitarianresponse_search_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Indexed Node: Assessment Title */
+  /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_node_index';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -130,6 +130,40 @@ function humanitarianresponse_search_views_default_views() {
     'page' => 'page',
     'default' => 0,
   );
+
+  /* Display: Clusters Facet per term */
+  $handler = $view->new_display('search_api_views_facets_block', 'Clusters Facet per term', 'search_api_views_facets_block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Clusters';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Global: Null */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Global: Null */
+  $handler->display->display_options['arguments']['null_1']['id'] = 'null_1';
+  $handler->display->display_options['arguments']['null_1']['table'] = 'views';
+  $handler->display->display_options['arguments']['null_1']['field'] = 'null';
+  $handler->display->display_options['arguments']['null_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null_1']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null_1']['default_argument_options']['code'] = '$tid = $view->args[0];
+$term = taxonomy_term_load($tid);
+$voc = taxonomy_vocabulary_load($term->vid);
+return $voc->machine_name;';
+  $handler->display->display_options['arguments']['null_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null_1']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['block_description'] = 'Clusters Facet per term';
+  $handler->display->display_options['linked_path'] = 'search/!2/!1';
+  $handler->display->display_options['facet_field'] = 'field_clusters';
   $translatables['search'] = array(
     t('Master'),
     t('Search'),
@@ -150,6 +184,9 @@ function humanitarianresponse_search_views_default_views() {
     t(','),
     t('Page'),
     t('Feed'),
+    t('Clusters Facet per term'),
+    t('Clusters'),
+    t('All'),
   );
   $export['search'] = $view;
 
