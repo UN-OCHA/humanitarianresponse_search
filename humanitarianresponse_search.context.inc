@@ -124,7 +124,7 @@ function humanitarianresponse_search_context_default_contexts() {
           'module' => 'views',
           'delta' => '-exp-search-page',
           'region' => 'user_second',
-          'weight' => '-10',
+          'weight' => '5',
         ),
       ),
     ),
