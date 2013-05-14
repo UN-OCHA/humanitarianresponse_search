@@ -33,6 +33,8 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'cluster',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'clusters',
   );
   $export['search_api@node_index::field_clusters'] = $facet;
 
@@ -59,6 +61,8 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'display-properties',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'display_properties',
   );
   $export['search_api@node_index::field_display_properties'] = $facet;
 
@@ -85,6 +89,8 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'document-type',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'document_types',
   );
   $export['search_api@node_index::field_document_type'] = $facet;
 
@@ -110,6 +116,8 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'default_true' => '1',
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'emergency',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'emergencies',
   );
   $export['search_api@node_index::field_emergency'] = $facet;
 
@@ -136,6 +144,8 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'event-category',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'event_categories',
   );
   $export['search_api@node_index::field_event_category'] = $facet;
 
@@ -162,6 +172,8 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'funding',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'funding',
   );
   $export['search_api@node_index::field_fundings'] = $facet;
 
@@ -188,6 +200,8 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'locations',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'locations',
   );
   $export['search_api@node_index::field_locations'] = $facet;
 
@@ -214,6 +228,8 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'map-type',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'map_types',
   );
   $export['search_api@node_index::field_map_type'] = $facet;
 
@@ -240,6 +256,8 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'organization',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'organizations',
   );
   $export['search_api@node_index::field_organizations'] = $facet;
 
@@ -266,6 +284,8 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'default_true' => TRUE,
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'theme',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'themes',
   );
   $export['search_api@node_index::field_themes'] = $facet;
 
