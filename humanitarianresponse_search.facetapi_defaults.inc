@@ -225,7 +225,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'facet_missing' => '0',
     'flatten' => '0',
     'query_type' => 'term',
-    'default_true' => TRUE,
+    'default_true' => '1',
     'facet_search_ids' => array(),
     'pretty_paths_alias' => 'map-type',
     'pretty_paths_taxonomy_pathauto' => 1,
@@ -679,7 +679,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'empty_behavior' => 'none',
     'soft_limit' => '20',
     'nofollow' => 1,
-    'show_expanded' => 0,
+    'show_expanded' => 1,
     'empty_text' => array(
       'value' => '',
       'format' => 'filtered_html',
