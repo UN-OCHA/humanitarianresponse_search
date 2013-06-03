@@ -75,11 +75,6 @@ function humanitarianresponse_search_views_default_views() {
   $handler->display->display_options['fields']['author']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['author']['display'] = 'id';
   $handler->display->display_options['fields']['author']['view_mode'] = 'full';
-  /* Sort criterion: Search: Relevance */
-  $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
-  $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_node_index';
-  $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
-  $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_node_index';

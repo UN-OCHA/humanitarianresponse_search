@@ -60,21 +60,19 @@ function humanitarianresponse_search_default_search_api_index() {
         "created" : { "type" : "date" },
         "changed" : { "type" : "date" },
         "author" : { "type" : "integer", "entity_type" : "user" },
+        "field_publication_date" : { "type" : "date" },
+        "field_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_clusters" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_locations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_contact_email" : { "type" : "text" },
-        "field_contact_job_title" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_contact_lastname" : { "type" : "text" },
         "field_coordination_hubs" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_display_properties" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_fundings" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_themes" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_display_properties" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_document_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_map_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_event_category" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_event_contact_email" : { "type" : "text" },
         "field_event_contact_person" : { "type" : "text" },
+        "field_map_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_link_description" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
         "search_api_url" : { "type" : "uri" },
@@ -207,7 +205,7 @@ function humanitarianresponse_search_default_search_api_server() {
     "options" : {
       "host" : "74.121.198.179",
       "port" : "8983",
-      "path" : "\\/solr\\/",
+      "path" : "\\/solr",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,
@@ -216,6 +214,53 @@ function humanitarianresponse_search_default_search_api_server() {
       "http_method" : "POST"
     },
     "enabled" : "1",
+    "rdf_mapping" : []
+  }');
+  return $items;
+}
+
+/**
+ * Implements hook_default_search_api_sort().
+ */
+function humanitarianresponse_search_default_search_api_sort() {
+  $items = array();
+  $items['node_index__field_publication_date'] = entity_import('search_api_sort', '{
+    "index_id" : "node_index",
+    "field" : "field_publication_date",
+    "name" : "Publication Date",
+    "enabled" : "1",
+    "weight" : "0",
+    "identifier" : "node_index__field_publication_date",
+    "default_sort" : "0",
+    "default_sort_no_terms" : "1",
+    "default_order" : "desc",
+    "options" : { "field_name" : "Publication Date" },
+    "rdf_mapping" : []
+  }');
+  $items['node_index__search_api_relevance'] = entity_import('search_api_sort', '{
+    "index_id" : "node_index",
+    "field" : "search_api_relevance",
+    "name" : "Relevance",
+    "enabled" : "1",
+    "weight" : "0",
+    "identifier" : "node_index__search_api_relevance",
+    "default_sort" : "1",
+    "default_sort_no_terms" : "0",
+    "default_order" : "desc",
+    "options" : { "field_name" : "search_api_relevance" },
+    "rdf_mapping" : []
+  }');
+  $items['node_index__type'] = entity_import('search_api_sort', '{
+    "index_id" : "node_index",
+    "field" : "type",
+    "name" : "Content type",
+    "enabled" : "1",
+    "weight" : "0",
+    "identifier" : "node_index__type",
+    "default_sort" : "0",
+    "default_sort_no_terms" : "0",
+    "default_order" : "desc",
+    "options" : { "field_name" : "Content type" },
     "rdf_mapping" : []
   }');
   return $items;
