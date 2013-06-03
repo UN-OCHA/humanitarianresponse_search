@@ -49,6 +49,7 @@ features[facetapi][] = search_api@node_index:block:field_themes
 features[facetapi][] = search_api@node_index:block:language
 features[facetapi][] = search_api@node_index:block:type
 features[features_api][] = api:2
+features[search_api_autocomplete_search][] = search_api_views_search
 features[search_api_index][] = node_index
 features[search_api_server][] = solr_server
 features[search_api_sort][] = node_index__field_publication_date
