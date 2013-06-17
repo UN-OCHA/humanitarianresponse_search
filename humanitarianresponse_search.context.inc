@@ -110,6 +110,12 @@ function humanitarianresponse_search_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '2',
         ),
+        'views--exp-search-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-search-page',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
+        ),
       ),
     ),
     'breadcrumb' => '<front>',
@@ -123,7 +129,7 @@ function humanitarianresponse_search_context_default_contexts() {
   $export['search'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'search_box';
   $context->description = '';
