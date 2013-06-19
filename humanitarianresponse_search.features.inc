@@ -66,7 +66,7 @@ function humanitarianresponse_search_default_search_api_index() {
     "server" : "solr_server",
     "item_type" : "node",
     "options" : {
-      "index_directly" : 0,
+      "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
         "type" : { "type" : "string" },
