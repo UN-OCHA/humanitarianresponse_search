@@ -16,6 +16,7 @@ function humanitarianresponse_search_ds_view_modes_info() {
   $ds_view_mode->label = 'Search';
   $ds_view_mode->entities = array(
     'node' => 'node',
+    'profile2' => 'profile2',
     'taxonomy_term' => 'taxonomy_term',
     'user' => 'user',
   );
