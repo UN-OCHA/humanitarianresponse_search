@@ -26,6 +26,7 @@ features[ctools][] = views:views_default:3.0
 features[current_search][] = humanitarianresponse
 features[ds_view_modes][] = search
 features[facetapi][] = search_api@node_index::field_clusters
+features[facetapi][] = search_api@node_index::field_coordination_hubs
 features[facetapi][] = search_api@node_index::field_display_properties
 features[facetapi][] = search_api@node_index::field_document_type
 features[facetapi][] = search_api@node_index::field_emergencies
