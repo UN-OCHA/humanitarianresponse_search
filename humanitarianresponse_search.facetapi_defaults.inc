@@ -32,7 +32,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'query_type' => 'term',
     'default_true' => TRUE,
     'facet_search_ids' => array(),
-    'pretty_paths_alias' => 'cluster',
+    'pretty_paths_alias' => 'clusters',
     'pretty_paths_taxonomy_pathauto' => 1,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'clusters',
   );
@@ -309,7 +309,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'query_type' => 'term',
     'default_true' => TRUE,
     'facet_search_ids' => array(),
-    'pretty_paths_alias' => 'organization',
+    'pretty_paths_alias' => 'organizations',
     'pretty_paths_taxonomy_pathauto' => 1,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'organizations',
   );
@@ -337,7 +337,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'query_type' => 'term',
     'default_true' => TRUE,
     'facet_search_ids' => array(),
-    'pretty_paths_alias' => 'theme',
+    'pretty_paths_alias' => 'themes',
     'pretty_paths_taxonomy_pathauto' => 1,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'themes',
   );
