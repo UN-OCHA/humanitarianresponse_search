@@ -59,7 +59,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
     'query_type' => 'term',
     'default_true' => TRUE,
     'facet_search_ids' => array(),
-    'pretty_paths_alias' => 'coordination-hub',
+    'pretty_paths_alias' => 'coordination_hubs',
     'pretty_paths_taxonomy_pathauto' => 1,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'coordination_hubs',
   );
