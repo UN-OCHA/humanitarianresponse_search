@@ -30,6 +30,18 @@ function humanitarianresponse_search_current_search_default_items() {
         'classes' => '',
         'weight' => '-50',
       ),
+      'active_items' => array(
+        'id' => 'active',
+        'label' => 'Active items',
+        'pattern' => '[facetapi_active:active-value]',
+        'keys' => 1,
+        'keys_link' => 1,
+        'keys_param' => 'search_api_views_fulltext',
+        'css' => 0,
+        'classes' => '',
+        'nofollow' => 1,
+        'weight' => '0',
+      ),
     ),
     'advanced' => array(
       'empty_searches' => '3',
