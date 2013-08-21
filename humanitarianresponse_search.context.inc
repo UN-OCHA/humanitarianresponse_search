@@ -29,14 +29,8 @@ function humanitarianresponse_search_context_default_contexts() {
         'current_search-humanitarianresponse' => array(
           'module' => 'current_search',
           'delta' => 'humanitarianresponse',
-          'region' => 'content',
-          'weight' => '-5',
-        ),
-        'current_search-standard' => array(
-          'module' => 'current_search',
-          'delta' => 'standard',
           'region' => 'sidebar_first',
-          'weight' => '-10',
+          'weight' => '-12',
         ),
         'facetapi-Shb0Q1vWgCArrHrjHszTyhl2jaEhIjzW' => array(
           'module' => 'facetapi',
