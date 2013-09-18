@@ -122,37 +122,9 @@ function humanitarianresponse_search_context_default_contexts() {
   t('search');
   $export['search'] = $context;
 
-  $context = new stdClass();
-  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'search_box';
-  $context->description = '';
-  $context->tag = 'search';
-  $context->conditions = array(
-    'sitewide' => array(
-      'values' => array(
-        1 => 1,
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'views--exp-search-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-search-page',
-          'region' => 'user_second',
-          'weight' => '5',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-
   // Translatables
   // Included for use with string extractors like potx.
   t('search');
-  $export['search_box'] = $context;
 
   return $export;
 }

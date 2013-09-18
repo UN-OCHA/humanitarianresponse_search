@@ -16,7 +16,6 @@ dependencies[] = search_api_sorts
 dependencies[] = search_api_views
 dependencies[] = strongarm
 features[context][] = search
-features[context][] = search_box
 features[ctools][] = context:context:3
 features[ctools][] = current_search:current_search:1
 features[ctools][] = ds:ds:1
