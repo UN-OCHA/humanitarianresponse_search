@@ -7,24 +7,19 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function humanitarianresponse_search_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function humanitarianresponse_search_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
-  list($module, $api) = func_get_args();
   if ($module == "current_search" && $api == "current_search") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "facetapi" && $api == "facetapi_defaults") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -33,7 +28,7 @@ function humanitarianresponse_search_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function humanitarianresponse_search_views_api() {
+function humanitarianresponse_search_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
@@ -221,6 +216,54 @@ function humanitarianresponse_search_default_search_api_index() {
 }
 
 /**
+ * Implements hook_default_search_api_saved_searches_settings().
+ */
+function humanitarianresponse_search_default_search_api_saved_searches_settings() {
+  $items = array();
+  $items['node_index'] = entity_import('search_api_saved_searches_settings', '{
+    "delta" : "node_index",
+    "index_id" : "node_index",
+    "enabled" : "1",
+    "options" : {
+      "date_field" : "",
+      "description" : "",
+      "registered_choose_mail" : 0,
+      "choose_name" : 0,
+      "registered_user_delete_key" : 0,
+      "show_empty_list" : 0,
+      "default_true" : true,
+      "ids_list" : [],
+      "user_select_interval" : 1,
+      "interval_options" : { "86400" : "Daily", "604800" : "Weekly" },
+      "set_interval" : "86400",
+      "mail" : {
+        "activate" : {
+          "send" : 0,
+          "title" : "Activate your saved search at [site:name]",
+          "body" : "A saved search on [site:name] with this e-mail address was created.\\r\\nTo activate this saved search, click the following link:\\r\\n\\r\\n[search-api-saved-search:activate-url]\\r\\n\\r\\nIf you didn\\u0027t create this saved search, just ignore this mail and it will be deleted.\\r\\n\\r\\n--  [site:name] team"
+        },
+        "notify" : {
+          "title" : "New results for your saved search at [site:name]",
+          "body" : "[user:name],\\r\\n\\r\\nThere are new results for your saved search on [site:name]:\\r\\n\\r\\n[search-api-saved-searches:results]\\r\\n\\r\\nYou can configure your saved searches at the following address:\\r\\n[user:search-api-saved-searches-url]\\r\\n\\r\\n--  [site:name] team",
+          "results" : "New results for search \\u0022[search-api-saved-search:name]\\u0022:\\r\\n[search-api-saved-search:items]\\r\\n[search-api-saved-search:results-capped]",
+          "result" : "[search-api-saved-search-result:label] ([search-api-saved-search-result:url])",
+          "max_results" : "0",
+          "results_capped" : "\\u2026\\r\\nView all results: [search-api-saved-search:view-url]"
+        }
+      },
+      "manual" : {
+        "allow" : 0,
+        "fulltext" : 0,
+        "fields" : [],
+        "page" : { "path" : "", "fulltext" : "", "direct_filter_params" : "0" }
+      }
+    },
+    "rdf_mapping" : []
+  }');
+  return $items;
+}
+
+/**
  * Implements hook_default_search_api_server().
  */
 function humanitarianresponse_search_default_search_api_server() {
@@ -231,6 +274,7 @@ function humanitarianresponse_search_default_search_api_server() {
     "description" : "",
     "class" : "search_api_solr_service",
     "options" : {
+      "scheme" : "http",
       "host" : "74.121.198.179",
       "port" : "8983",
       "path" : "\\/solr",
@@ -239,7 +283,9 @@ function humanitarianresponse_search_default_search_api_server() {
       "excerpt" : 0,
       "retrieve_data" : 0,
       "highlight_data" : 0,
-      "http_method" : "POST"
+      "http_method" : "POST",
+      "autocorrect_spell" : 1,
+      "autocorrect_suggest_words" : 1
     },
     "enabled" : "1",
     "rdf_mapping" : []

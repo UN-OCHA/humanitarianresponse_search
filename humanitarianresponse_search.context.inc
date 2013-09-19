@@ -26,6 +26,12 @@ function humanitarianresponse_search_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'search_api_saved_searches-node_index' => array(
+          'module' => 'search_api_saved_searches',
+          'delta' => 'node_index',
+          'region' => 'sidebar_first',
+          'weight' => '-13',
+        ),
         'current_search-humanitarianresponse' => array(
           'module' => 'current_search',
           'delta' => 'humanitarianresponse',
@@ -121,10 +127,6 @@ function humanitarianresponse_search_context_default_contexts() {
   t('On search view');
   t('search');
   $export['search'] = $context;
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('search');
 
   return $export;
 }
