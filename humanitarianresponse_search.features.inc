@@ -103,7 +103,8 @@ function humanitarianresponse_search_default_search_api_index() {
         "field_document_type:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_event_date:value" : { "type" : "list\\u003Cdate\\u003E" },
         "field_map_type:name" : { "type" : "text" },
-        "field_document_files:field_document_files_file:file" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "file" }
+        "field_document_files:field_document_files_file:file" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "file" },
+        "search_api_aggregation_1" : { "type" : "string" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
@@ -113,10 +114,10 @@ function humanitarianresponse_search_default_search_api_index() {
             "default" : "1",
             "bundles" : {
               "assessment" : "assessment",
-              "media_gallery" : "media_gallery",
               "humanitarian_profile" : "humanitarian_profile",
               "link" : "link",
-              "page" : "page"
+              "media_gallery" : "media_gallery",
+              "page" : "page",
             }
           }
         },
@@ -129,7 +130,18 @@ function humanitarianresponse_search_default_search_api_index() {
         },
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] }
+        "search_api_alter_add_aggregation" : {
+          "status" : 1,
+          "weight" : "0",
+          "settings" : { "fields" : { "search_api_aggregation_1" : {
+                "name" : "Event Date",
+                "type" : "first",
+                "fields" : [ "field_event_date:value" ],
+                "description" : "A First aggregation of the following fields: Date \\u00bb Start date."
+              }
+            }
+          }
+        }
       },
       "processors" : {
         "search_api_case_ignore" : {
@@ -137,9 +149,6 @@ function humanitarianresponse_search_default_search_api_index() {
           "weight" : "0",
           "settings" : { "fields" : {
               "title" : true,
-              "field_contact_email" : true,
-              "field_contact_job_title" : true,
-              "field_contact_lastname" : true,
               "field_event_contact_email" : true,
               "field_event_contact_person" : true,
               "field_link_description" : true,
@@ -154,9 +163,6 @@ function humanitarianresponse_search_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "field_contact_email" : true,
-              "field_contact_job_title" : true,
-              "field_contact_lastname" : true,
               "field_event_contact_email" : true,
               "field_event_contact_person" : true,
               "field_link_description" : true,
@@ -174,11 +180,6 @@ function humanitarianresponse_search_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "field_contact_email" : true,
-              "field_contact_job_title" : true,
-              "field_contact_lastname" : true,
-              "field_event_contact_email" : true,
-              "field_event_contact_person" : true,
               "field_link_description" : true,
               "body:value" : true,
               "body:summary" : true
@@ -193,9 +194,6 @@ function humanitarianresponse_search_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "field_contact_email" : true,
-              "field_contact_job_title" : true,
-              "field_contact_lastname" : true,
               "field_event_contact_email" : true,
               "field_event_contact_person" : true,
               "field_link_description" : true,
@@ -309,6 +307,19 @@ function humanitarianresponse_search_default_search_api_sort() {
     "default_sort_no_terms" : "1",
     "default_order" : "desc",
     "options" : { "field_name" : "Publication Date" },
+    "rdf_mapping" : []
+  }');
+  $items['node_index__search_api_aggregation_1'] = entity_import('search_api_sort', '{
+    "index_id" : "node_index",
+    "field" : "search_api_aggregation_1",
+    "name" : "Event Date",
+    "enabled" : "1",
+    "weight" : "0",
+    "identifier" : "node_index__search_api_aggregation_1",
+    "default_sort" : "0",
+    "default_sort_no_terms" : "0",
+    "default_order" : "desc",
+    "options" : { "field_name" : "Event Date" },
     "rdf_mapping" : []
   }');
   $items['node_index__search_api_relevance'] = entity_import('search_api_sort', '{

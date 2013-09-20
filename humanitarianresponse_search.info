@@ -56,6 +56,7 @@ features[search_api_index][] = node_index
 features[search_api_saved_searches_settings][] = node_index
 features[search_api_server][] = solr_server
 features[search_api_sort][] = node_index__field_publication_date
+features[search_api_sort][] = node_index__search_api_aggregation_1
 features[search_api_sort][] = node_index__search_api_relevance
 features[search_api_sort][] = node_index__type
 features[user_permission][] = use search_api_autocomplete for search_api_views_search
