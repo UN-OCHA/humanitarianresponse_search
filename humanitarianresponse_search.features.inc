@@ -117,7 +117,7 @@ function humanitarianresponse_search_default_search_api_index() {
               "humanitarian_profile" : "humanitarian_profile",
               "link" : "link",
               "media_gallery" : "media_gallery",
-              "page" : "page",
+              "page" : "page"
             }
           }
         },
