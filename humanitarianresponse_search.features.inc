@@ -114,7 +114,6 @@ function humanitarianresponse_search_default_search_api_index() {
           "settings" : {
             "default" : "1",
             "bundles" : {
-              "assessment" : "assessment",
               "humanitarian_profile" : "humanitarian_profile",
               "link" : "link",
               "media_gallery" : "media_gallery",
