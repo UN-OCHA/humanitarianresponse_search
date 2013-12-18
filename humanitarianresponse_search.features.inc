@@ -78,15 +78,12 @@ function humanitarianresponse_search_default_search_api_index() {
         "field_locations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_emergencies" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_coordination_hubs" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_local_themes" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_display_properties" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_fundings" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_themes" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_document_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_local_themes" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_map_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_event_category" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_event_contact_email" : { "type" : "string" },
-        "field_event_contact_person" : { "type" : "string" },
         "field_link_description" : { "type" : "text", "boost" : "0.5" },
         "search_api_language" : { "type" : "string" },
         "search_api_aggregation_1" : { "type" : "string" },
@@ -104,23 +101,9 @@ function humanitarianresponse_search_default_search_api_index() {
         "field_themes:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_document_type:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_map_type:name" : { "type" : "text" },
-        "field_event_date:value" : { "type" : "list\\u003Cdate\\u003E" },
         "field_document_files:field_document_files_file:file" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "file" }
       },
       "data_alter_callbacks" : {
-        "search_api_alter_bundle_filter" : {
-          "status" : 1,
-          "weight" : "-10",
-          "settings" : {
-            "default" : "1",
-            "bundles" : {
-              "humanitarian_profile" : "humanitarian_profile",
-              "link" : "link",
-              "media_gallery" : "media_gallery",
-              "page" : "page"
-            }
-          }
-        },
         "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_node_status" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_hierarchy" : {
@@ -272,6 +255,8 @@ function humanitarianresponse_search_default_search_api_server() {
     "description" : "",
     "class" : "search_api_solr_service",
     "options" : {
+      "clean_ids_form" : [],
+      "clean_ids" : false,
       "scheme" : "http",
       "host" : "74.121.198.179",
       "port" : "8983",
