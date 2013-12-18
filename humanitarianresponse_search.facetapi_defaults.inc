@@ -19,7 +19,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_clusters';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
@@ -47,7 +47,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_coordination_hubs';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
@@ -74,7 +74,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_display_properties';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
@@ -102,7 +102,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_document_type';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
@@ -130,7 +130,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_emergencies';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
@@ -157,7 +157,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_emergency';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
@@ -184,7 +184,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_event_category';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
@@ -212,7 +212,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_fundings';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
@@ -240,7 +240,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_locations';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
@@ -268,7 +268,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_map_type';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
@@ -296,7 +296,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_organizations';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
@@ -324,7 +324,7 @@ function humanitarianresponse_search_facetapi_default_facet_settings() {
   $facet->facet = 'field_themes';
   $facet->enabled = FALSE;
   $facet->settings = array(
-    'operator' => 'and',
+    'operator' => 'or',
     'hard_limit' => '50',
     'dependencies' => array(
       'bundle' => 'none',
